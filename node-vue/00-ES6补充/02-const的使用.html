@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  
+  </body>
+
+  <script>
+    // 注意一：；一但给 const 修饰的标识符被赋值之后，不能修改
+    // const name = 'key'
+    // name = 'as'
+
+    // 注意二：；在使用 const 定义标识符时，必须进行赋值
+    // const name
+
+    // 注意三：；常量的含义是指向的对象不能修改，但是可以改变对象内部的属性
+    const obj = {
+      name: 'key',
+      age: 30,
+    }
+    console.log(obj)
+
+    obj.name = 'key11'
+    obj.age = 28
+    console.log(obj)
+
+  </script>
+
+
+</html>

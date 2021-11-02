@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  </body>
+
+  <div id="app">
+
+    <h2>{{counter}}</h2>
+    
+    <button v-on:click="increment">+</button>
+    <button @click="decrement">-</button>
+
+  </div>
+
+<!-- 
+  v-on：
+  - 作用：绑定事件监听器
+  - 缩写：@
+  - 预期：Function | Inline Statement | Object
+  - 参数：event
+ -->
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+      },
+      methods: {
+        increment() {
+          this.counter++
+          console.log('+++ :', this.counter)
+        },
+        decrement() {
+          this.counter--
+          console.log('--- :', this.counter)
+        }
+      }
+    })
+  </script>
+</html>

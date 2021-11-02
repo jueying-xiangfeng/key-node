@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<div id="app" @click="divClick()">
+
+  <!-- 1、.stop 修饰符的使用，event.stopPropagation()  停止冒泡 -->
+  <button @click.stop="btnClick1">btn1</button>
+
+  <br>
+
+  <!-- 2、.prevent 修饰符的使用，event.precentDefault()  阻止默认行为 -->
+  <form action="baidu">
+    <input type="submit" value="提交" @click.prevent="submitClick">
+  </form>
+  <form @submit.prevent></form>
+
+  <!-- 3、监听某个键盘的键帽 -->
+  <!-- .{keyCode | keyAlias} 只当事件是从特定键触发时才会触发回调 -->
+  <input @keyup.enter="btnClick3()">
+
+  <!-- 4、.once 只触发一次 -->
+  <!-- 串联修饰符 -->
+  <button @click.once.stop="btnClick4()">btn4</button>
+
+  <!-- 5、.native 监听组件根元素的原生事件 -->
+  <!-- 适用于组件开发时自定义组件 -->
+  <!-- <pcb @click.native="clickCustom">adsfd</pcb> -->
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      counter: 0,
+    },
+    methods: {
+      divClick() {
+        console.log('dic click')
+      },
+      btnClick1() {
+        console.log('1111 111')
+      },
+      submitClick() {
+        console.log('submitClick 111')
+      },
+      btnClick3() {
+        console.log('3333 333')
+      },
+      btnClick4() {
+        console.log('44444 333')
+      },
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <button>btn0</button>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+  </body>
+
+
+  <script>
+    /**
+     * 事实上 var 的设计可以看成是 JavaScript 语言设计上的错误，但是这种错误多半是不能修复和移除，因为需要向后兼容
+     * 
+     * 大概十年前，Brendan Eich 就决定修复这个问题，于是他添加了一个新的关键字：let
+     * 可以将 let 看成是更完美的 var
+     */
+
+     /**
+      * 块级作用域
+      * 
+      * JS 中使用 var 来声明一个变量时，变量的作用域主要和函数的定义有关
+      * 针对于其他块定义来说是没有作用域的，比如 if/for 等，这在开发中往往会引起一些问题
+      */
+
+    // ES5 中的 var 是没有块级作用域的
+    // ES6 中的 let 是有块级作用的(if/for)
+    // ES5 之前因为 if 和 for 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 function 的作用域来解决应用外面变量的问题
+    // ES6 中，加入了 let，let 是有 if 和 for 的块级作用域的
+
+    // 1、变量作用域：变量在什么范围内是可用
+    // {
+    //   var name = 'key'
+    //   console.log(name)
+    // }
+    // name = 'key11'
+    // console.log('-- ', name)
+
+    // 2、没有块级作用域引起的问题：if 的块级
+    // var func
+    // if (true) {
+    //   var name = 'key'
+    //   func = function() {
+    //     console.log(name)
+    //   }
+    // }
+    // func()
+    // name = 'key11'
+    // func()
+
+    // 3、没有块级作用域引起的问题：for的块级
+    // var btns = document.getElementsByTagName('button')
+    // for (var index = 0; index < btns.length; index++) {
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+
+    // 为什么闭包可以解决问题：函数是一个作用域
+    // var btns = document.getElementsByTagName('button')
+    // for (var index = 0; index < btns.length; index++) {
+    //   (function(index) {
+    //     btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    //   })(index)
+    // }
+
+    // var btns = document.getElementsByTagName('button')
+    // for (let index = 0; index < btns.length; index++) {
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+
+    // // ES5
+    // var index 
+    // {
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+    // {
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+
+    // // ES6
+    // { index = 0
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+    // { index = 1
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+    // { index = 2
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+    // { index = 3
+    //   btns[index].addEventListener('click', function() {
+    //     console.log('第' + index + '个按钮')
+    //   })
+    // }
+
+
+  </script>
+
+
+</html>

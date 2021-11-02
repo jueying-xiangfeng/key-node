@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div id="app">
+      <!-- 对象语法 -->
+
+      <!-- {css属性名 : 属性值} -->
+      <!-- '50px' 必须加上单引号，否则是当做一个变量去解析 -->
+      <h2 :style="{fontSize: '50px'}">{{message}}</h2>
+
+      <!-- finalSize1 被当成变量使用 -->
+      <h2 :style="{fontSize: finalSize1}">{{message}}</h2>
+      <h2 :style="{fontSize: finalSize2 + 'px', backgroundColor: finalColor}">{{message}}</h2>
+      <h2 :style="getStyles()">{{message}}</h2>
+
+
+      <!-- 数组语法 -->
+      <h2 :style="[baseStyle1, baseStyle2]">{{message}}</h2>
+      
+    </div>
+  </body>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '动态绑定 - style',
+        finalSize1: '10px',
+        finalSize2: 20,
+        finalColor: 'red',
+        baseStyle1: {backgroundColor: 'green'},
+        baseStyle2: {fontSize: '15px'}
+      },
+      methods: {
+        getStyles: function () {
+          return {fontSize: this.finalSize1, backgroundColor: this.finalColor}
+        }
+      }
+    })
+  </script>
+
+</html>

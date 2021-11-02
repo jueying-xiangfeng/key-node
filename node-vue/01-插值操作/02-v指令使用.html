@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+  
+    <!-- v-once -->
+    <h2>{{message}}</h2>
+    <h2 v-once>{{message}}</h2>
+  
+    <!-- v-html -->
+    <h2>{{vHtml}}</h2>
+    <h2 v-html="vHtml"></h2>
+  
+    <!-- v-text  覆盖 -->
+    <h2>{{vText}}, 后缀</h2>
+    <h2 v-text="vText">后缀</h2>
+  
+    <!-- v-pre  不做解析 -->
+    <h2>{{message}}</h2>
+    <h2 v-pre>{{message}}</h2>
+  
+    <!-- v-cloak -->
+    <h2>{{message}}</h2>
+    <h2 v-cloak>{{message}}</h2>
+  
+  </div>
+  
+  <script src="../js/vue.js"></script>
+  <script>
+  
+    // const app = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     message: '啦啦啦aaas',
+    //     vHtml: '<a href="http://www.baidu/com">这是一个超链接</a>',
+    //     vText: '文本',
+    //   }
+    // })
+  
+    setTimeout(function() {
+  
+      /**
+       * 原理：
+       * 在 vue 解析之前 div 中有一个属性 v-cloak
+       * 在 vue 解析之后 div 中没有一个属性 v-cloak
+       */
+      const app = new Vue({
+      el: '#app',
+      data: {
+        message: '啦啦啦aaas',
+        vHtml: 'v-html <a href="http://www.baidu/com">这是一个超链接</a>',
+        vText: 'v-text',
+        vCloak: 'v-cloak'
+      }
+    })
+    }, 1000)
+  
+  </script>
+</body>
+</html>

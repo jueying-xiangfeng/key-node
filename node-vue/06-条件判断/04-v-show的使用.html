@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<div id="app">
+
+  <!-- 当 v-if 为 false 时，对应元素不会在 DOM 中 -->
+  <h2 v-if="isShow">v-if 展示</h2>
+  <!-- 当 v-show 为 false 时，只是添加了一个行内样式：display:none -->
+  <h2 v-show="isShow">v-show 展示</h2>
+
+  <br>
+
+  <button @click="isShow = !isShow">btn</button>
+
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      isShow: true
+    },
+  })
+</script>
+
+
+</html>

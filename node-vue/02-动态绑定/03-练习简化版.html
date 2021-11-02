@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .title {
+      color: orange
+    }
+    .active {
+      color: red
+    }
+    .selected {
+      color: orchid
+    }
+  </style>
+
+
+</head>
+<body>
+  
+</body>
+
+<div id="app">
+  <h2>{{title}}</h2>
+
+  <ul>
+    <li 
+      v-for="(item, index) in movies" 
+      @click="liClick(index)"
+      :class="{active: currentIndex === index}"
+    >
+      {{item}}
+    </li>
+  </ul>
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      title: '电影',
+      movies: ['海贼王', '进击的巨人', '海尔兄弟'],
+      currentIndex: 0
+    },
+    methods: {
+      liClick(index) {
+        console.log('---', index)
+        this.currentIndex = index
+      }
+    },
+  })
+</script>
+
+
+</html>

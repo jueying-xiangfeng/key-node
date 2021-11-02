@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .title {
+      color: orange
+    }
+    .active {
+      color: red
+    }
+    .selected {
+      color: orchid
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+
+<div id="app">
+  <!-- b-bind 动态绑定属性 -->
+  <!-- 缩写  : -->
+
+  <h2>{{message}}</h2>
+  <a v-bind:href="aHref">百度一下</a>
+  <!-- 语法糖写法 -->
+  <a :href="aHref">百度一下</a>
+
+  <!-- {类名 : bool} -->
+  <!-- 动态绑定 class 对象语法 -->
+  <h2 class="title" v-bind:class="{active: isActive}">动态绑定 - 对象语法</h2>
+  <button @click="change">切换</button>
+
+  <!-- 动态绑定 class 对数组法 -->
+  <h2 class="title" v-bind:class="['a', 'b', 'c']">动态绑定 - 对象语法</h2>
+  <button @click="change">切换</button>
+
+  <!-- demo 练习 -->
+  <!-- 点击哪个 哪个变为红色 -->
+  <ul>
+    <li v-for="(m, index) in movies" 
+      @click="clickAction(index)"
+      v-bind:class="{selected: fetchSel(index)}"
+    >
+      {{m}}
+    </li>
+  </ul>
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '动态绑定',
+      aHref: 'http://www.baidu.com',
+      isActive: true,
+      movies: ['海贼王', '进击的巨人', '海尔兄弟'],
+      isSel: [true, false, false]
+    },
+    methods: {
+      change() {
+        this.isActive = !this.isActive
+      },
+      getClasses: function () {
+        return {active1: this.isActive}
+      },
+      clickAction: function (index) {
+        let nStatus = []
+        this.isSel.forEach((element, i) => {
+          nStatus.push(i === index)
+        })
+        this.isSel = nStatus
+        console.log('0-=-=- : ' + index + ' --- ' + this.isSel[index])
+      },
+      fetchSel(index) {
+        const aa = this.isSel[index]
+        console.log('---- ' + index + '  ' + aa)
+        return aa
+      }
+    }
+  })
+</script>
+
+
+</html>
+
+
+<!-- http://10.96.77.247:9118/hebe/factoring/user-info?isDefaultJump=true&type=show -->

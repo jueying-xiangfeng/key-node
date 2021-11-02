@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{getFullName()}}</h2>
+      <h2>{{getFullName()}}</h2>
+      <h2>{{getFullName()}}</h2>
+      <h2>{{getFullName()}}</h2>
+
+
+      <h2>{{fullName}}</h2>
+      <h2>{{fullName}}</h2>
+      <h2>{{fullName}}</h2>
+      <h2>{{fullName}}</h2> 
+    </div>
+
+
+  </body>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Kobe',
+        lastName: 'Bryant',
+      },
+
+      // methods 没有缓存，每次调用都会重新计算
+      // computed 有缓存，当值发生变化时才会重新计算
+
+      computed: {
+        fullName: function() {
+          console.log('----- fullName')
+          return this.firstName + ' ' + this.lastName
+        },
+      },
+      methods: {
+        getFullName: function() {
+          console.log('----- getFullName')
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+  </script>
+
+</html>
+
+

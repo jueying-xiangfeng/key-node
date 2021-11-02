@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    </body>
+
+  <!-- 
+    编程范式   
+    1、命令式编程
+    2、声明式编程  
+  -->
+
+    <div id="app">
+        {{ message }}
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+
+        <div>计数器：{{ counter }}</div>
+        <!-- <button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button> -->
+        <button v-on:click="add">+</button>
+        <button v-on:click="sub">-</button>
+        <button @click="sub">-</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '哈哈哈a',
+                name: 'key',
+                list: [
+                    '海贼王', '火影', '死神'
+                ],
+                counter: 0
+            },
+            methods: {
+                add: function() {
+                    this.counter++
+                    console.log('add 被执行')
+                },
+                sub: function() {
+                    this.counter--
+                    console.log('sub 被执行')
+                }
+            }
+        })
+    </script>
+</html>
+
+
+
