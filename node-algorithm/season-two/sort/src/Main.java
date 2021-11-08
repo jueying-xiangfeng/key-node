@@ -17,7 +17,8 @@ public class Main {
                 new HeapSort(),
                 new InsertionSort1(),
                 new InsertionSort2(),
-                new InsertionSort3()
+                new InsertionSort3(),
+                new MergeSort()
         );
 
         System.out.println("------------------------------------");
