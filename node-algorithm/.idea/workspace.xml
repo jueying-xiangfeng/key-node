@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c54c4a46-93ee-4b64-b9b4-3752adb4798a" name="更改" comment="" />
+    <list default="true" id="c54c4a46-93ee-4b64-b9b4-3752adb4798a" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/season-two/sort/src/com/key/sort/cmp/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sort/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sort/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/season-two/sort/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/season-two/sort/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -24,6 +32,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="20LpEkJCAt4zZF8Cicy6aLT2405" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,6 +50,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/season-two/sort/src/com/key/tools" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.key.sort.cmp" />
     </key>
   </component>
   <component name="RunManager" selected="应用程序.Main">
@@ -75,6 +87,8 @@
       <updated>1635833612991</updated>
       <workItem from="1635833614950" duration="23000" />
       <workItem from="1635833724309" duration="13752000" />
+      <workItem from="1636341203592" duration="3191000" />
+      <workItem from="1636370401981" duration="85000" />
     </task>
     <servers />
   </component>
