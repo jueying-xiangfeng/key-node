@@ -32,6 +32,7 @@ Carthage/Build
 
 # key-node
 node-algorithm/out/
+node-algorithm/.idea/
 node-vue/out/node_modules/
 
 

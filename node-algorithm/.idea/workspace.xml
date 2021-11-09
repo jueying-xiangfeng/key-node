@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54c4a46-93ee-4b64-b9b4-3752adb4798a" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/season-two/sort/src/com/key/sort/cmp/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sort/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sort/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/season-two/sort/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/season-two/sort/src/Main.java" afterDir="false" />
@@ -88,7 +89,7 @@
       <workItem from="1635833614950" duration="23000" />
       <workItem from="1635833724309" duration="13752000" />
       <workItem from="1636341203592" duration="3191000" />
-      <workItem from="1636370401981" duration="2825000" />
+      <workItem from="1636370401981" duration="7835000" />
     </task>
     <servers />
   </component>

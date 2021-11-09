@@ -9,16 +9,19 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(" --- season - two");
 
-        testSort(Integers.random(2000, 1, 20000),
+        Integer[] arr = Integers.random(8, 1, 20);
+        Integers.println(arr);
+        testSort(Integers.random(50000, 1, 20000),
 //                new BubbleSort1(),
 //                new BubbleSort2(),
-                new BubbleSort3(),
-                new SelectionSort(),
+//                new BubbleSort3(),
+//                new SelectionSort(),
                 new HeapSort(),
-                new InsertionSort1(),
-                new InsertionSort2(),
+//                new InsertionSort1(),
+//                new InsertionSort2(),
                 new InsertionSort3(),
-                new MergeSort()
+                new MergeSort(),
+                new QuickSort()
         );
 
         System.out.println("------------------------------------");

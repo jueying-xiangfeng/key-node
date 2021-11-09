@@ -2,6 +2,8 @@ package com.key.sort.cmp;
 
 import com.key.sort.Sort;
 
+import java.util.Arrays;
+
 /**
  * 执行流程：
  * - 不断地将当前序列平均分割成2个子序列
@@ -23,9 +25,10 @@ public class MergeSort<E extends Comparable<E>> extends Sort<E> {
      * 对 [begin, end) 范围的数据进行归并排序
      */
     private void sort(int begin, int end) {
+        // 数量为 1
         if (end - begin < 2) return;
 
-        int middle = (end + begin) >> 1;
+        int middle = (begin + end) >> 1;
         sort(begin, middle);
         sort(middle, end);
         merge(begin, middle, end);
@@ -44,7 +47,7 @@ public class MergeSort<E extends Comparable<E>> extends Sort<E> {
             leftArray[i] = array[begin + i];
         }
 
-        // 如果左边还没结束
+        // 如果左边没有结束 (左边结束了，应该直接结束，因为右边的就是有序的。发生交换的前提就是左边还未结束)
         while (li < le) {
             if (ri < re && cmp(array[ri], leftArray[li]) < 0) {
                 array[ai++] = array[ri++];
